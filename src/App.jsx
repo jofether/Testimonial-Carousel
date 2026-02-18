@@ -80,7 +80,9 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* HEADER */}
-      <header className="pt-8 pb-16 text-center">
+      <header className="pt-8 pb-16 text-center absolute top-0 left-0 right-0">
+        {/* [BUG - LAYERS] Absolute positioning breaks header flow. */}
+        {/* [FIX] Remove 'absolute top-0 left-0 right-0' */}
         <div className="mb-4">
           <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full">
             <p className="text-blue-300 text-sm font-semibold tracking-wide">TRUSTED BY INDUSTRY LEADERS</p>
@@ -95,30 +97,35 @@ function App() {
       </header>
 
       {/* CAROUSEL */}
-      <div className="px-4 pb-20 max-w-4xl mx-auto">
+      <div className="px-4 pb-20 max-w-4xl mx-auto mt-64">
         <div className="relative">
           {/* CAROUSEL CARD */}
           <div className="overflow-hidden">
             <div
-              className="transition-all duration-500 ease-in-out"
+              // [BUG - LAYOUT] flex-col breaks horizontal carousel sliding.
+              // [FIX] Remove 'flex-col' class
+              className="transition-all duration-500 ease-in-out flex-col"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {/* SLIDES */}
               <div className="flex">
                 {testimonials.map((t) => (
-                  <div key={t.id} className="w-full flex-shrink-0 px-4">
+                  <div key={t.id} className="w-full flex-shrink-0 px-4 -m-96">
+                    {/* [BUG - SPACING] Negative margin -m-96 causes extreme overlap. [FIX] Remove '-m-96' and keep only 'px-4' */}
                     <div className="bg-gradient-to-br from-slate-800 to-slate-800/50 border border-slate-700/50 rounded-3xl p-10 md:p-12 backdrop-blur-sm hover:border-slate-600/80 transition-all duration-300">
                       {/* STARS */}
                       <div className="flex gap-1 mb-6">
                         {Array.from({ length: t.rating }).map((_, i) => (
-                          <span key={i} className="text-amber-400">
+                          <span key={i} className="text-amber-40X">
+                            {/* [BUG - TYPO] Invalid Tailwind class 'text-amber-40X'. [FIX] Change to 'text-amber-400' */}
                             <StarIcon />
                           </span>
                         ))}
                       </div>
 
                       {/* QUOTE */}
-                      <p className="text-lg md:text-xl text-slate-100 leading-relaxed mb-8 font-light">
+                      <p className="text-lg md:text-xl text-slate-100 leading-relaxed mb-8 font-light opacity-5">
+                        {/* [BUG - COLOR] opacity-5 makes text barely visible. [FIX] Remove opacity-5 or change to opacity-100 */}
                         "{t.text}"
                       </p>
 
@@ -143,9 +150,10 @@ function App() {
           </div>
 
           {/* PREV BUTTON */}
+          {/* [BUG - LAYERS] -z-50 places button behind carousel. [FIX] Change to 'z-50' instead of '-z-50' */}
           <button
             onClick={prevSlide}
-            className="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-xl font-bold"
+            className="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-xl font-bold -z-50"
             aria-label="Previous testimonial"
           >
             &#10094;
@@ -169,7 +177,8 @@ function App() {
               onClick={() => setCurrentIndex(idx)}
               className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400/50 ${
                 currentIndex === idx
-                  ? 'bg-blue-500 w-8 h-2.5'
+                  // [BUG - TYPO] Invalid class 'bg-blue-5'. [FIX] Change to 'bg-blue-500'
+                  ? 'bg-blue-5 w-8 h-2.5'
                   : 'bg-slate-600 hover:bg-slate-500 w-2.5 h-2.5'
               }`}
               aria-label={`Go to testimonial ${idx + 1}`}
@@ -178,7 +187,8 @@ function App() {
         </div>
 
         {/* COUNTER */}
-        <div className="text-center mt-6 text-slate-400 text-sm">
+        {/* [BUG - COLOR] White text blends with background. [FIX] Change to 'text-slate-400' */}
+        <div className="text-center mt-6 text-white text-sm">
           {currentIndex + 1} / {testimonials.length}
         </div>
       </div>
@@ -186,7 +196,8 @@ function App() {
       {/* STATS SECTION */}
       <section className="py-16 border-t border-slate-700/50 mt-12">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* [BUG - LAYOUT] Wrong grid: 'grid-cols-2' instead of 'grid-cols-3'. [FIX] Change to 'md:grid-cols-3' */}
             <div className="text-center">
               <p className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-2">5,000+</p>
               <p className="text-slate-400">Active Companies</p>
@@ -204,7 +215,8 @@ function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-8 border-t border-slate-700/50 text-center text-slate-400 text-sm">
+      {/* [BUG - SPACING] Massive padding p-96 breaks footer layout. [FIX] Remove 'p-96' and keep only 'py-8' */}
+      <footer className="py-8 border-t border-slate-700/50 text-center text-slate-400 text-sm p-96">
         <p>© 2024 Testimonial Platform. Trusted by the world's best teams.</p>
       </footer>
     </div>
