@@ -2,6 +2,7 @@
   "repository": "Testimonial Carousel",
   "bugs": [
     {
+      "comment": "Bug #1 - position",
       "bug_category": "Layout",
       "bug_type": "position",
       "file_modified": "src/App.jsx",
@@ -12,11 +13,12 @@
       "bounding_box": {
         "x": 0,
         "y": 0,
-        "width": 0,
-        "height": 0
+        "width": 1280,
+        "height": 291
       }
     },
     {
+      "comment": "Bug #2 - margin-top",
       "bug_category": "Spacing",
       "bug_type": "margin-top",
       "file_modified": "src/App.jsx",
@@ -25,13 +27,14 @@
       "buggy_code": "<div className=\"px-4 pb-20 max-w-4xl mx-auto mt-64\">",
       "css_selector": ".carousel-container",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 192,
+        "y": 256,
+        "width": 896,
+        "height": 174
       }
     },
     {
+      "comment": "Bug #3 - flexbox",
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
@@ -40,13 +43,14 @@
       "buggy_code": "className=\"transition-all duration-500 ease-in-out flex-col\"",
       "css_selector": ".carousel-slides-wrapper",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
+        "x": 208,
+        "y": 256,
+        "width": 864,
         "height": 0
       }
     },
     {
+      "comment": "Bug #4 - margin",
       "bug_category": "Spacing",
       "bug_type": "margin",
       "file_modified": "src/App.jsx",
@@ -55,13 +59,14 @@
       "buggy_code": "<div key={t.id} className=\"w-full flex-shrink-0 px-4 -m-96\">",
       "css_selector": ".testimonial-slide",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
+        "x": 208,
+        "y": 256,
+        "width": 864,
         "height": 0
       }
     },
     {
+      "comment": "Bug #5 - text-color",
       "bug_category": "Typo",
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
@@ -70,13 +75,14 @@
       "buggy_code": "<span key={i} className=\"text-amber-40X\">",
       "css_selector": ".star-icon",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
+        "x": 208,
+        "y": 256,
+        "width": 864,
         "height": 0
       }
     },
     {
+      "comment": "Bug #6 - opacity",
       "bug_category": "Layers",
       "bug_type": "opacity",
       "file_modified": "src/App.jsx",
@@ -85,13 +91,14 @@
       "buggy_code": "<p className=\"text-lg md:text-xl text-slate-100 leading-relaxed mb-8 font-light opacity-5\">",
       "css_selector": ".testimonial-quote",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
+        "x": 208,
+        "y": 256,
+        "width": 864,
         "height": 0
       }
     },
     {
+      "comment": "Bug #7 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -100,13 +107,14 @@
       "buggy_code": "className=\"absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-xl font-bold -z-50\"",
       "css_selector": ".prev-button",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 144,
+        "y": 230,
+        "width": 34,
+        "height": 52
       }
     },
     {
+      "comment": "Bug #8 - background-color",
       "bug_category": "Typo",
       "bug_type": "background-color",
       "file_modified": "src/App.jsx",
@@ -115,13 +123,14 @@
       "buggy_code": "? 'bg-blue-5 w-8 h-2.5'",
       "css_selector": ".dot-indicator-active",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 633,
+        "y": 296,
+        "width": 32,
+        "height": 10
       }
     },
     {
+      "comment": "Bug #9 - grid-columns",
       "bug_category": "Layout",
       "bug_type": "grid-columns",
       "file_modified": "src/App.jsx",
@@ -131,12 +140,13 @@
       "css_selector": ".stats-grid",
       "bounding_box": {
         "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "y": 478,
+        "width": 1280,
+        "height": 305
       }
     },
     {
+      "comment": "Bug #10 - padding",
       "bug_category": "Spacing",
       "bug_type": "padding",
       "file_modified": "src/App.jsx",
@@ -146,9 +156,9 @@
       "css_selector": "footer",
       "bounding_box": {
         "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "y": 783,
+        "width": 1280,
+        "height": 85
       }
     }
   ]
