@@ -1,5 +1,9 @@
 {
   "repository": "Testimonial Carousel",
+  "playwright_config": {
+    "viewport_height": 2500,
+    "note": "Extended viewport required to capture the massive footer padding blowout."
+  },
   "bugs": [
     {
       "comment": "Bug #1 - position",
@@ -9,12 +13,12 @@
       "line_number": 83,
       "clean_code": "<header className=\"pt-8 pb-16 text-center\">",
       "buggy_code": "<header className=\"pt-8 pb-16 text-center absolute top-0 left-0 right-0\">",
-      "css_selector": "header",
+      "css_selector": "header.text-center",
       "bounding_box": {
         "x": 0,
         "y": 0,
         "width": 1280,
-        "height": 291
+        "height": 300
       }
     },
     {
@@ -25,12 +29,12 @@
       "line_number": 98,
       "clean_code": "<div className=\"px-4 pb-20 max-w-4xl mx-auto\">",
       "buggy_code": "<div className=\"px-4 pb-20 max-w-4xl mx-auto mt-64\">",
-      "css_selector": ".carousel-container",
+      "css_selector": "div.max-w-4xl.mx-auto.pb-20",
       "bounding_box": {
         "x": 192,
-        "y": 256,
+        "y": 350,
         "width": 896,
-        "height": 174
+        "height": 800
       }
     },
     {
@@ -41,12 +45,12 @@
       "line_number": 104,
       "clean_code": "className=\"transition-all duration-500 ease-in-out\"",
       "buggy_code": "className=\"transition-all duration-500 ease-in-out flex-col\"",
-      "css_selector": ".carousel-slides-wrapper",
+      "css_selector": "div.overflow-hidden div.transition-all",
       "bounding_box": {
-        "x": 208,
-        "y": 256,
-        "width": 864,
-        "height": 0
+        "x": 0,
+        "y": 350,
+        "width": 1280,
+        "height": 450
       }
     },
     {
@@ -57,12 +61,12 @@
       "line_number": 109,
       "clean_code": "<div key={t.id} className=\"w-full flex-shrink-0 px-4\">",
       "buggy_code": "<div key={t.id} className=\"w-full flex-shrink-0 px-4 -m-96\">",
-      "css_selector": ".testimonial-slide",
+      "css_selector": "div.bg-gradient-to-br.from-slate-800.rounded-3xl",
       "bounding_box": {
-        "x": 208,
-        "y": 256,
-        "width": 864,
-        "height": 0
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 800
       }
     },
     {
@@ -73,12 +77,12 @@
       "line_number": 115,
       "clean_code": "<span key={i} className=\"text-amber-400\">",
       "buggy_code": "<span key={i} className=\"text-amber-40X\">",
-      "css_selector": ".star-icon",
+      "css_selector": "div.flex.gap-1.mb-6 svg.w-5",
       "bounding_box": {
-        "x": 208,
-        "y": 256,
-        "width": 864,
-        "height": 0
+        "x": 220,
+        "y": 365,
+        "width": 150,
+        "height": 40
       }
     },
     {
@@ -89,12 +93,12 @@
       "line_number": 122,
       "clean_code": "<p className=\"text-lg md:text-xl text-slate-100 leading-relaxed mb-8 font-light\">",
       "buggy_code": "<p className=\"text-lg md:text-xl text-slate-100 leading-relaxed mb-8 font-light opacity-5\">",
-      "css_selector": ".testimonial-quote",
+      "css_selector": "div.bg-gradient-to-br p.text-slate-100.leading-relaxed",
       "bounding_box": {
-        "x": 208,
-        "y": 256,
-        "width": 864,
-        "height": 0
+        "x": 230,
+        "y": 410,
+        "width": 820,
+        "height": 180
       }
     },
     {
@@ -105,12 +109,12 @@
       "line_number": 148,
       "clean_code": "className=\"absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-xl font-bold\"",
       "buggy_code": "className=\"absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-xl font-bold -z-50\"",
-      "css_selector": ".prev-button",
+      "css_selector": "button[aria-label=\"Previous testimonial\"]",
       "bounding_box": {
-        "x": 144,
-        "y": 230,
-        "width": 34,
-        "height": 52
+        "x": 80,
+        "y": 450,
+        "width": 120,
+        "height": 120
       }
     },
     {
@@ -121,12 +125,12 @@
       "line_number": 172,
       "clean_code": "? 'bg-blue-500 w-8 h-2.5'",
       "buggy_code": "? 'bg-blue-5 w-8 h-2.5'",
-      "css_selector": ".dot-indicator-active",
+      "css_selector": "button[aria-label=\"Go to testimonial 1\"]",
       "bounding_box": {
-        "x": 633,
-        "y": 296,
-        "width": 32,
-        "height": 10
+        "x": 560,
+        "y": 800,
+        "width": 160,
+        "height": 30
       }
     },
     {
@@ -137,12 +141,12 @@
       "line_number": 189,
       "clean_code": "<div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">",
       "buggy_code": "<div className=\"grid grid-cols-1 md:grid-cols-2 gap-8\">",
-      "css_selector": ".stats-grid",
+      "css_selector": "section div.grid.grid-cols-1.gap-8",
       "bounding_box": {
         "x": 0,
-        "y": 478,
+        "y": 900,
         "width": 1280,
-        "height": 305
+        "height": 600
       }
     },
     {
@@ -153,12 +157,12 @@
       "line_number": 207,
       "clean_code": "<footer className=\"py-8 border-t border-slate-700/50 text-center text-slate-400 text-sm\">",
       "buggy_code": "<footer className=\"py-8 border-t border-slate-700/50 text-center text-slate-400 text-sm p-96\">",
-      "css_selector": "footer",
+      "css_selector": "footer.border-t",
       "bounding_box": {
         "x": 0,
-        "y": 783,
+        "y": 1350,
         "width": 1280,
-        "height": 85
+        "height": 850
       }
     }
   ]
